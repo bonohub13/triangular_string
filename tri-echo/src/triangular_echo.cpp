@@ -7,22 +7,21 @@ class TriangularEcho
 public:
 	explicit TriangularEcho(int &argc, char **&argv);
 private:
-	std::vector<std::string> str_buffer;
+    std::vector<std::string> str_buffer;
 public:
 	void run();
 };
 TriangularEcho::TriangularEcho(int &argc, char **&argv)
 {
 	std::string full_buffer = "";
-	std::string short_buffer = "";
+	std::string short_buffer = "", init_str = "|  ";
 
 	for (int i=1; i<argc; i++)
-		full_buffer = (full_buffer == "") ? std::string(argv[i]) : full_buffer + " " + std::string(argv[i]);
+        full_buffer = (full_buffer == "") ? std::string(argv[i]) : full_buffer + "  " + std::string(argv[i]);
 
 	for (auto &c : full_buffer)
 	{
-		short_buffer = c + short_buffer;
-		short_buffer;
+		short_buffer = init_str + c + short_buffer;
 		str_buffer.push_back(short_buffer);
 	}
 }

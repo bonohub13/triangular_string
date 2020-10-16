@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 project(triangular_string)
 
-add_executable(triangular_echo src/triangular_echo.cpp)
+add_executable(tri_echo src/triangular_echo.cpp)
 
 # ----- only use this when add_library is used -----
 function(link_lib executable_name library_name)
